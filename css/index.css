@@ -1,0 +1,244 @@
+.suse-mono-<uniquifier > {
+  font-family: "SUSE Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.suse-<uniquifier > {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+:root {
+  --main-bg-color: #f8ebd7;
+  --main-body-color: black;
+  --darkGreenAccent: #6a7b06;
+  --lightPinkAccent: #ffc8d9;
+  --accentOrange: #fa4300;
+  --accentPink: #d3006f;
+  --accentCrimson: #d9155d;
+  --accentBlue: #2193b0;
+  --main-heading-font: "SUSE Mono", serif;
+  --main-body-font: "SUSE", sans-serif;
+  font-size: 16px;
+}
+
+html {
+  scroll-padding-top: 4rem;
+  --max-width: 1600px;
+}
+
+main {
+  padding-top: 3.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: var(--lightPinkAccent);
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: 1rem 1.5rem;
+  /* min-width: 100px;
+  max-width: 200px; */
+  text-align: center;
+  display: flex;
+  color: var(--accentCrimson);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--accentCrimson);
+  color: var(--lightPinkAccent);
+  transition: color 0.2s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-body-color);
+  font-family: var(--main-body-font);
+}
+
+a {
+  color: var(--darkGreenAccent);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--main-heading-font);
+  font-weight: 700;
+  color: var(--darkGreenAccent);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-style: oblique;
+  /* border: 4px solid cyan; */
+}
+
+h2 {
+  color: var(--accentPink);
+  font-family: var(--main-heading-font);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 600;
+  /* border: solid 3px palevioletred; */
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: var(--accentOrange);
+  font-family: var(--main-heading-font);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+h4 {
+  color: var(--accentBlue);
+  font-family: var(--main-heading-font);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+#about {
+  margin: 20px auto;
+  font-weight: 500;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 5fr;
+  column-gap: 2rem;
+  align-content: start;
+}
+
+.responsive-photo {
+  width: 100%;
+  max-width: 400px;
+  min-width: 250px;
+  height: auto;
+}
+
+#frida-headshot {
+  border-radius: 5%;
+  grid-row: span 2;
+  align-self: start;
+}
+
+#subheader {
+  grid-column: 2 / 3;
+  grid-row-start: 1;
+}
+
+#bio {
+  grid-column: 2 / 3;
+  grid-row-start: 2;
+  align-self: start;
+  margin: 0;
+}
+
+#experience {
+  margin: 0 auto;
+  max-width: 1000px;
+  /* border: 4px solid orange; */
+}
+
+#coursework strong {
+  color: var(--accentBlue);
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  row-gap: 4px;
+  /* border: 4px solid orchid; */
+  margin-bottom: 20px;
+}
+
+.job-title {
+  /* border: 4px solid blue; */
+  grid-column: 1 / 2;
+  position: relative;
+  font-weight: 500;
+}
+
+.job-title strong {
+  color: var(--accentCrimson);
+  font-weight: 700;
+}
+
+.job-title::before {
+  content: "\1F338";
+  position: absolute;
+  left: -2rem;
+  font-size: 1.25rem;
+  top: -0.25rem;
+}
+
+.job-date {
+  grid-column: 2 / 3;
+  /* border: 4px solid purple; */
+  color: var(--accentBlue);
+  font-weight: 600;
+  justify-self: end;
+}
+
+.job-description {
+  grid-row-start: 2;
+  grid-column: span 2;
+  /* border: 4px solid green; */
+}
+
+#skills {
+  margin: 12px auto;
+  max-width: 1000px;
+}
+
+#skills strong {
+  color: var(--accentBlue);
+}
+
+#projects {
+  margin: 12px auto;
+  max-width: 1000px;
+}
+
+#connect {
+  margin: 12px auto;
+  max-width: 1000px;
+}
+
+#connect ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  /* flex-direction: row; */
+  /* border: solid 3px rebeccapurple; */
+}
+
+#linkedin,
+#github {
+  color: var(--accentBlue);
+  font-size: 2rem;
+  margin: 0 10px;
+}
+
+#linkedin:hover,
+#github:hover {
+  color: var(--darkGreenAccent);
+  transition: color 0.2s;
+}
