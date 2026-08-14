@@ -153,7 +153,6 @@ h4 {
 #experience {
   margin: 0 auto;
   max-width: 1000px;
-  /* border: 4px solid orange; */
 }
 
 #coursework strong {
@@ -199,7 +198,6 @@ h4 {
 .job-description {
   grid-row-start: 2;
   grid-column: span 2;
-  /* border: 4px solid green; */
 }
 
 #skills {
@@ -207,8 +205,18 @@ h4 {
   max-width: 1000px;
 }
 
-#skills strong {
+#skills ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2rem;
+  list-style-type: "\1F3A8";
   color: var(--accentBlue);
+  font-weight: 600;
+}
+
+#skills li {
+  padding: 0.5rem;
+  max-width: fit-content;
 }
 
 #projects {
@@ -241,4 +249,9 @@ h4 {
 #github:hover {
   color: var(--darkGreenAccent);
   transition: color 0.2s;
+}
+
+footer {
+  margin: 12px auto;
+  max-width: 1000px;
 }
