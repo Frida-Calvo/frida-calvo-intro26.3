@@ -71,7 +71,7 @@ main {
   padding-top: 3.5rem;
 }
 
-.section {
+section {
   margin: 16px auto;
   max-width: 1080px;
 }
@@ -123,7 +123,7 @@ h4 {
   align-content: start;
 }
 
-#subheader {
+#about h2 {
   grid-column: 2 / 3;
   grid-row-start: 1;
 }
@@ -147,6 +147,8 @@ h4 {
   align-self: start;
   margin: 0;
 }
+
+/* Experience Section: using Grid layout */
 
 #experience h3 {
   margin: 1rem 0;
@@ -194,6 +196,7 @@ h4 {
   grid-column: span 2;
 }
 
+/* Display skills section using Grid layout */
 #skills ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -208,6 +211,22 @@ h4 {
   max-width: fit-content;
 }
 
+/* Display Projects section using Grid layout */
+#projects ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2rem;
+  list-style-type: "\1F4C2";
+  color: var(--darkGreenAccent);
+  font-weight: 600;
+}
+
+#projects li {
+  padding: 0.5rem;
+  max-width: fit-content;
+}
+
+/* Connect section using Flexbox layout */
 #connect ul {
   list-style-type: none;
   display: flex;

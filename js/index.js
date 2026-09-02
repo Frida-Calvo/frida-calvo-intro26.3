@@ -1,3 +1,5 @@
+// Insert the copyright logo, current year, and name in the footer
+
 const body = document.body;
 const footer = document.createElement("footer");
 body.appendChild(footer);
@@ -8,6 +10,8 @@ const copyright = document.createElement("p");
 
 copyright.innerHTML = `\u00A9 Frida Calvo Huerta ${thisYear}`;
 footer.append(copyright);
+
+//  Using an array, insert the array items as a list of skills in the skills section
 
 let skills = [
   "JavaScript",
@@ -31,11 +35,12 @@ for (let i = 0; i < skills.length; i++) {
   skillsList.appendChild(skill);
 }
 
+// Message form section
 const messageForm = document.querySelector('form[name="leave_message"]');
-
 const messageSection = document.getElementById("messages");
 const messageList = messageSection.querySelector("ul");
 
+//  Conditionally render the messages header and section of index.html (show it if there are messages, hide it if none)
 function checkMessageListCount() {
   if (messageList.childElementCount > 0) {
     console.log(messageList.childElementCount);
@@ -54,8 +59,11 @@ messageForm.addEventListener("submit", (event) => {
   console.log(userName, userEmail, userMessage);
 
   const newMessage = document.createElement("li");
+
+  // Handle the event listener on the message form to convert form inputs into the author's name as a clickable link & display message
   newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a><span>${userMessage}</span>`;
 
+  // Provide a remove button to delete the message
   const removeButton = document.createElement("button");
   removeButton.innerText = "remove";
   removeButton.classList.toggle("remove");
@@ -72,6 +80,7 @@ messageForm.addEventListener("submit", (event) => {
 
   checkMessageListCount();
 
+  // Provide an edit button to change message form field
   const editButton = document.createElement("button");
   editButton.innerText = "edit";
   editButton.classList.toggle("edit");
@@ -115,3 +124,56 @@ messageForm.addEventListener("submit", (event) => {
 
   event.currentTarget.reset();
 });
+
+// Using API fetch, insert the names of your GitHub repositories in the projects section of index.html
+
+//using async-await version
+async function getGithubRepos() {
+  try {
+    const response = await fetch(
+      " https://api.github.com/users/Frida-Calvo/repos",
+    );
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    const repositories = await response.json();
+    console.log(repositories);
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement("li");
+      project.innerText = repositories[i].name;
+      projectList.append(project);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// getGithubRepos();
+
+//using fetch & then version
+fetch(" https://api.github.com/users/Frida-Calvo/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
+  .then((repo) => {
+    const repositories = repo;
+    console.log(repositories);
+
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement("li");
+      project.innerText = repositories[i].name;
+      projectList.append(project);
+    }
+  })
+  .catch((error) => console.error(error));
+
+// (OPTIONAL) Provide additional information about each repository
+
+// (OPTIONAL) Make the repository names clickable links that redirect the user to that repository page
