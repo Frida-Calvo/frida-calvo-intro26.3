@@ -131,7 +131,7 @@ messageForm.addEventListener("submit", (event) => {
 async function getGithubRepos() {
   try {
     const response = await fetch(
-      " https://api.github.com/users/Frida-Calvo/repos",
+      "https://api.github.com/users/Frida-Calvo/repos",
     );
     if (!response.ok) {
       throw new Error(response.status);
@@ -153,7 +153,7 @@ async function getGithubRepos() {
 // getGithubRepos();
 
 //using fetch & then version
-fetch(" https://api.github.com/users/Frida-Calvo/repos")
+fetch("https://api.github.com/users/Frida-Calvo/repos")
   .then((response) => {
     if (!response.ok) {
       throw new Error(response.status);
