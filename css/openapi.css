@@ -1,0 +1,245 @@
+.suse-mono-<uniquifier > {
+  font-family: "SUSE Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.suse-<uniquifier > {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+:root {
+  --main-bg-color: #f8ebd7;
+  --main-body-color: black;
+  --darkGreenAccent: #6a7b06;
+  --lightPinkAccent: #ffc8d9;
+  --accentOrange: #fa4300;
+  --accentPink: #d3006f;
+  --accentCrimson: #d9155d;
+  --accentBlue: #2193b0;
+  --main-heading-font: "SUSE Mono", serif;
+  --main-body-font: "SUSE", sans-serif;
+  font-size: 16px;
+}
+
+html {
+  scroll-padding-top: 4rem;
+  --max-width: 1600px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-body-color);
+  font-family: var(--main-body-font);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  background-color: var(--lightPinkAccent);
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav {
+  margin-right: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  display: flex;
+  color: var(--accentCrimson);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--accentCrimson);
+  color: var(--lightPinkAccent);
+  transition: color 0.2s;
+}
+
+/* nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: var(--lightPinkAccent);
+  font-weight: 500;
+  flex-wrap: wrap;
+} */
+
+/* nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: var(--lightPinkAccent);
+  font-weight: 500;
+  flex-wrap: wrap;
+} */
+
+/* fix nav bar so that Portfolio is all the way on left and button are all the way to right using Flexbox */
+/* get rid of the inherited list format */
+
+/* nav a {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  display: flex;
+  color: var(--accentCrimson);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--accentCrimson);
+  color: var(--lightPinkAccent);
+  transition: color 0.2s;
+} */
+
+#btn-artworks,
+#btn-artists {
+  background-color: var(--accentBlue);
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: white;
+  font-weight: bold;
+  width: 15rem;
+  margin-left: 20px;
+}
+
+#btn-artworks:hover,
+#btn-artists:hover {
+  background-color: white;
+  border: 3px solid var(--accentBlue);
+  color: var(--accentBlue);
+}
+
+main {
+  padding-top: 3.5rem;
+}
+
+a {
+  color: var(--darkGreenAccent);
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 1rem 0 2rem 0;
+  max-width: 1080px;
+  text-align: center;
+  font-family: var(--main-heading-font);
+  font-weight: 700;
+  color: var(--darkGreenAccent);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-style: oblique;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--accentCrimson);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#display {
+  margin: 0 auto;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  /* grid-template-rows: auto auto auto auto; */
+  gap: 0 1em;
+  position: relative;
+}
+
+/* figure out how to add a gap between the rows of new cards, not within the cards */
+
+.header {
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+}
+
+.card {
+  height: 100%;
+  /* overflow: hidden; */
+  padding: 0 0 2em 0;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+}
+
+.card.random {
+  grid-row: span 5;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+}
+
+.artist {
+  font-weight: 600;
+  color: var(--darkGreenAccent);
+  margin: 10px 0;
+}
+
+.year {
+  font-weight: 600;
+  color: var(--accentBlue);
+  margin: 10px 0;
+}
+
+.description {
+  margin: 10px 0 0 0;
+}
+
+/* .year.monet {
+  margin: 10px 0;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* need to figure out how not to have the photos overflow outside of the constraints of the website's max width */
+/* also resize the cards so they fit nicer */
+/* make the nav bar look better */
+/* I also need to link this openapi html file in the portfolio html */
+
+/* also change the color and the font weight of the cards */

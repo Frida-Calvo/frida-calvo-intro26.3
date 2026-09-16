@@ -28,7 +28,7 @@
 
 html {
   scroll-padding-top: 4rem;
-  --max-width: 1600px;
+  /* --max-width: 1600px; */
 }
 
 body {
@@ -81,7 +81,8 @@ a {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1080px;
   text-align: center;
   font-family: var(--main-heading-font);
   font-weight: 700;
@@ -405,8 +406,8 @@ h4 {
 }
 
 footer {
-  margin: 12px auto;
-  max-width: 1000px;
+  margin: 0 auto;
+  max-width: 1080px;
 }
 
 /* WIP: media queries for mobile */
